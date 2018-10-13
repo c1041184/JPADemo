@@ -62,6 +62,25 @@ public class SlaController implements Serializable {
         this.sla = new Sla();
         return "index";
     }
+    
+    public String delete(Sla a){
+        this.slaFacade.remove(a);
+        return "index";
+    
+    }
+    
+    public String edit(Sla a){
+        this.sla = a;
+        return "edit";
+    }
+    
+    public String edit(){
+        this.slaFacade.edit(sla);
+        this.sla = new Sla();
+        return "index";
+    
+    }
+    
 
 
 }

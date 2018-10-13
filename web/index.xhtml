@@ -37,9 +37,28 @@
                         </f:facet>
                         <h:outputText value="#{item.responsetime}"/>
                     </h:column>
+                      <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Delete"/>
+                        </f:facet>
+                          <h:commandLink value="Delete" 
+                                         action="#{slaController.delete(item)}"
+                                         onclick="return confirm('ben je zeker ?')" >
+                          </h:commandLink>
+                      </h:column>
+                      <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Edit"/>
+                        </f:facet>
+                          <h:commandLink value="Edit" 
+                                         action="#{slaController.edit(item)}">
+                          </h:commandLink>
+                      </h:column>
+
                 </h:dataTable>
             </h:form>
             <h:outputLink value="add.xhtml">Sla Toevoegen</h:outputLink>
+
         </f:view>
         
     </h:body>
